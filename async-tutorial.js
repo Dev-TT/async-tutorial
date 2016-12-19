@@ -4,7 +4,7 @@ var async = require ("async");
 ///////////// RETURNS: ARRAY
 
 var stack=[];
-f=1;
+f=1;					// External variable for demostration of access from within the async functions
 
 var function1 = function (callback){	// The callback here is compulsory, even if no callbck is defined below
 	console.log("f value: "+f);	// shows access to external variables
