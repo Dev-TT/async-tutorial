@@ -7,9 +7,9 @@ var stack=[];
 f=1;
 
 var function1 = function (callback){	// The callback here is compulsory, even if no callbck is defined below
-	console.log("f value: "+f);
-	f=f+1;
-	callback (null, "F1");				// No Error. Returns Value to the parallel: "F1"
+	console.log("f value: "+f);	// shows access to external variables
+	f=f+1;				// modification of external variales
+	callback (null, "F1");		// No Error. Returns Value to the parallel call: "F1"
 }
 
 var function2 = function (callback){
