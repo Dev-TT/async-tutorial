@@ -1,6 +1,6 @@
 var async = require ("async");
 
-///////////// GIVE FUNCTIONS AS ARRAY
+///////////// GIVE FUNCTIONS AS ARRAY =)
 ///////////// RETURNS: ARRAY
 
 var stack=[];
