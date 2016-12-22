@@ -1,6 +1,6 @@
 var async = require ("async");
 
-///////////// GIVE FUNCTIONS AS ARRAY.
+///////////// GIVE FUNCTIONS AS ARRAY
 ///////////// RETURNS: ARRAY
 
 var stack=[];
@@ -42,23 +42,23 @@ var stack={};
 f=1;
 
 stack.function1 = function (callback){
-	console.log("f value: "+f);
 	f=f+1;
+	console.log("f1 value: "+f);
 	callback (null, "F1");
 
 	//callback ("ERROR", null);	
 }
 
 stack.function2 = function (callback){
-	console.log("f value: "+f);
 	f=f+1;
+	console.log("f2 value: "+f);
 	callback (null, "F2");
 	//callback ("ERROR", null);			// error at this moment makes the following final result: { function1: 'F1', function2: null }
 }
 
 stack.function3 = function (callback){
-	console.log("f value: "+f);
 	f=f+1;
+	console.log("f3 value: "+f);
 	callback (null, "F3");
 }
 
