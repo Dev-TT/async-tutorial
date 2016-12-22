@@ -1,3 +1,8 @@
+////
+////	See async-tutorial for further  explanations
+////
+
+
 var async = require ("async");
 
 ///////////// GIVE FUNCTIONS AS ARRAY
