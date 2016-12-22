@@ -5,6 +5,7 @@
 
 var async = require ("async");
 
+///////////// ASYNC SERIES 
 ///////////// GIVE FUNCTIONS AS ARRAY
 ///////////// RETURNS: ARRAY
 {
@@ -40,6 +41,7 @@ var async = require ("async");
 	});
 }
 
+///////////// ASYNC PARALLEL
 ///////////// GIVE FUNCTIONS AS OBJECT
 ///////////// RETURNS: OBJECT
 {
@@ -73,7 +75,7 @@ var async = require ("async");
 	});
 }
 
-///////////// WATERFALL (array only)
+///////////// ASYNC WATERFALL (array only)
 
 var stack=[];										// for Waterfall, the stack MUST be an array, not an object
 f=1;
