@@ -14,7 +14,7 @@ var async = require ("async");
 
 	var function1 = function (callback){	// The callback here is compulsory, even if no callbck is defined below
 		console.log("f value: "+f);	// shows access to external variables
-		f=f+1;				// modification of external variales
+		f=f+1;						// modification of external variales
 		callback (null, "F1");		// No Error. Returns Value to the parallel call: "F1"
 	}
 
@@ -36,7 +36,7 @@ var async = require ("async");
 	stack.push(function3);
 
 	async.series(stack, function(err, result){		// the second parameter (the callback) is OPTIONAL, BUT I have found that without the callback, then the script does not stop on error (in parallel). in series it stops
-		console.log("Series callback: ");						// returns array: [ 'F1', 'F2', 'F3' ]
+		console.log("Series callback: ");			// returns array: [ 'F1', 'F2', 'F3' ]
 		console.log(result);
 	});
 }
@@ -60,7 +60,7 @@ var async = require ("async");
 		f=f+1;
 		console.log("f2 value: "+f);
 		callback (null, "F2");
-		//callback ("ERROR", null);			// error at this moment makes the following final result: { function1: 'F1', function2: null }
+		//callback ("ERROR", null);					// error at this moment makes the following final result: { function1: 'F1', function2: null }
 	}
 
 	stack.function3 = function (callback){
@@ -70,7 +70,7 @@ var async = require ("async");
 	}
 
 	async.parallel(stack, function(err, result){
-		console.log("Parallel callback: ");		// returns object: { function1: 'F1', function2: 'F2', function3: 'F3' }
+		console.log("Parallel callback: ");			// returns object: { function1: 'F1', function2: 'F2', function3: 'F3' }
 		console.log(result);
 	});
 }
@@ -94,7 +94,7 @@ var function2 =  function (param1, callback){
 	console.log("f2 value: "+f);
 	param2=f;
 	callback (null, param2);
-	//callback ("ERROR", null);			// error at this moment makes the following final result: { function1: 'F1', function2: null }
+	//callback ("ERROR", null);						// error at this moment makes the following final result: { function1: 'F1', function2: null }
 }
 
 var function3 =  function (param2, callback){
@@ -112,7 +112,7 @@ async.waterfall(stack, function(err, result){
 		console.log("WF Error: "+err);
 		return;
 	}
-	console.log("Waterfall callback: ");		// returns object: { function1: 'F1', function2: 'F2', function3: 'F3' }
+	console.log("Waterfall callback: ");			// returns object: { function1: 'F1', function2: 'F2', function3: 'F3' }
 	console.log(result);
 });
 
